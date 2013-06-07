@@ -18,3 +18,14 @@ local.properties
 # Eclipse project files
 .classpath
 .project
+
+# maven etc. 
+classes/
+target/
+shapelib-android-demo/gen-external-apklibs/
+shapelib-android-demo/target/
+shapelib-android-demo-it/target/
+
+# Intellij
+*.iml
+.idea/
