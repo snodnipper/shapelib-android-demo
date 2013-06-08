@@ -72,8 +72,8 @@ void process(JNIEnv * env, SHPHandle hSHP, DBFHandle hDBF, jstring file, jobject
     jmethodID methodIdGetApples = (*env)->GetMethodID(env, classAppleTree, "getApples", "()I");
 
     // Let us print out those items
-   	const int recordCount = DBFGetRecordCount(hDBF);
-	const int end = totalItems + recordCount;
+    const int recordCount = DBFGetRecordCount(hDBF);
+    const int end = totalItems + recordCount;
     int i;
     for (i = recordCount; i < end; i++) {
         jobject tree = (*env)->CallObjectMethod(env, listObject, methodIdGet, i);
