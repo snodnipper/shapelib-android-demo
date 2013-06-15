@@ -93,12 +93,7 @@ void process(JNIEnv * env, SHPHandle hSHP, DBFHandle hDBF, jstring file, jobject
 
 int writePoint(JNIEnv * env, SHPHandle hSHP, DBFHandle hDBF, int index, double latitude, double longitude, jstring name, jdouble height, int apples)
 {
-    double *x = malloc(sizeof(*x));
-    double *y = malloc(sizeof(*y));
-
-    x[0] = longitude;
-    y[0] = latitude;
-    SHPObject *oSHP = SHPCreateSimpleObject(SHPT_POINT, 1, x, y, NULL);
+    SHPObject *oSHP = SHPCreateSimpleObject(SHPT_POINT, 1, &longitude, &latitude, NULL);
     SHPWriteObject(hSHP, -1, oSHP);
     const char *nativeName = (*env)->GetStringUTFChars(env, name, 0);
     DBFWriteStringAttribute(hDBF, index, 0, nativeName);
@@ -107,9 +102,6 @@ int writePoint(JNIEnv * env, SHPHandle hSHP, DBFHandle hDBF, int index, double l
     DBFWriteIntegerAttribute(hDBF, index, 2, apples);
 
     SHPDestroyObject(oSHP);
-
-    free(x);
-    free(y);
 
     return 0;
 }
