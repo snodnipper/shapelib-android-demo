@@ -1,7 +1,7 @@
 shapelib-android-demo
 =====================
 
-A crude example of making ESRI shapefiles from Android using the [Android NDK] and [Shapelib] library.  Shapelib provides the shapefile support to [GDAL/OGR] is used by [many (most?) GIS programs][1].
+A crude example of making ESRI shapefiles from Android using the [Android NDK] and [Shapelib] library.  Shapelib provides the shapefile support to [GDAL/OGR] and is used by [many (most?) GIS programs][1].
 
 Credit for the open source Shapelib/GDAL/OGR libraries goes to [Frank Warmerdam] and that community.
 
